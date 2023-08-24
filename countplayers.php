@@ -13,7 +13,7 @@ $sPacket .= chr($aIPAddr[2]);
 $sPacket .= chr($aIPAddr[3]);
 $sPacket .= chr($iPort & 0xFF);
 $sPacket .= chr($iPort >> 8 & 0xFF);
-$sPacket .= 'i';
+$sPacket .= 'c';
 $rSocket = fsockopen('udp://'.$sIPAddr, $iPort, $iError, $sError, 2);
 fwrite($rSocket, $sPacket);
 echo fread($rSocket, 2048);
